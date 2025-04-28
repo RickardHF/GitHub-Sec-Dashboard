@@ -8,10 +8,10 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Image
             className="dark:invert mb-8"
-            src="/next.svg"
+            src="/Solidify logo dark.svg"
             alt="Next.js logo"
-            width={180}
-            height={38}
+            width={320}
+            height={48}
             priority
           />
           
