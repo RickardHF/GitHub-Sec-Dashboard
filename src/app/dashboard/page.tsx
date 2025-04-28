@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -23,10 +24,13 @@ export default async function DashboardPage() {
         
         <div className="flex items-center space-x-4">
           {session.user.image && (
-            <img
+            <Image
               src={session.user.image}
               alt="Profile"
-              className="h-16 w-16 rounded-full border-2 border-gray-100 dark:border-gray-700"
+              width={64}
+              height={64}
+              className="rounded-full border-2 border-gray-100 dark:border-gray-700"
+              priority
             />
           )}
           

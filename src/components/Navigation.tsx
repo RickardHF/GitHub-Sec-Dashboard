@@ -4,6 +4,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import Image from "next/image";
 
 export function Navigation() {
   const { data: session, status } = useSession();
@@ -29,10 +30,12 @@ export function Navigation() {
             <>
               <div className="flex items-center gap-3">
                 {session?.user?.image && (
-                  <img
+                  <Image
                     src={session.user.image}
                     alt={session.user.name || "User"}
-                    className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700"
+                    width={32}
+                    height={32}
+                    className="rounded-full border border-gray-200 dark:border-gray-700"
                   />
                 )}
                 <span className="text-gray-700 dark:text-gray-300 hidden md:inline">
